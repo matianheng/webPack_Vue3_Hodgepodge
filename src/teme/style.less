@@ -1,0 +1,424 @@
+//定义变量
+@fontSize: 40px;
+@fontColor:black;
+
+body {
+  font-size: @fontSize;
+  color: @fontColor;
+}
+
+// 默认的主题颜色
+/*wwwß*/
+@primaryColor: var(--primaryColor, #000);
+@primaryTextColor: var(--primaryTextColor, #ED2123);
+@themeColor:var(--themeColor, #f5f5f5);
+// 导出变量
+:export {
+  name: "less";
+  primaryColor: @primaryColor;
+  primaryTextColor: @primaryTextColor;
+}
+@font-face {
+    font-family: 'lightsFont';
+   // src:  url('@/assets/font/fonteditor8.ttf'); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    font-weight: 400;
+   }
+
+   .fonteditor {
+    font-family: "lightsFont" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 48px;  
+  
+
+}
+ 
+
+.navbar_right{
+  display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    vertical-align: middle;
+    box-sizing:border-box;
+}
+// .navbar{
+//   height: 44px;
+//   background: rgba(255,255,255,0.00);
+//   background: url('@/assets/img/background.png');
+// }
+// .nut-navbar {
+//   height:44px;  
+//   line-height: 44px;
+//   background: rgba(255,255,255,0.00);
+//   background: url('@/assets/img/background.png');
+  
+// }
+// .nu-change_color{
+//   height: 108px;
+//   background: url('@/assets/img/background.png');
+//   margin: auto;
+//   display: flex;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   background-repeat: round;
+//   overflow:auto;
+//   overflow-x: scroll;
+
+ 
+  
+
+// }
+.nu-change_color1{
+   display: flex;
+   overflow-x:scroll;
+   background: center;
+ 
+}
+.flex-contents{
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  margin: 3px;
+  flex-shrink:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:@themeColor;
+  border-radius: 8px;
+  // box-shadow: 0px 2px 16px 0px rgba(27,82,139,0.09); 
+  transition: all 0.5s;
+  transition-timing-function: steps(3000,start);
+}
+.themeColor{
+  background:@primaryTextColor;
+}
+
+.themeFontColor{
+  color:@primaryTextColor;
+}
+
+ 
+ .light_index{
+   box-sizing:border-box;
+}
+.color-no-select-1{
+  background-color: #ED2123;
+}
+.color-no-select-2{
+  background-color: #F48823;
+}
+.color-no-select-3{
+  background-color: #19AA56;
+}
+.color-no-select-4{
+  background-color: #005FBE;
+}
+.color-no-select-5{
+  background-color: #FFFFFF;
+}
+.color-no-select-size{
+  width: 20px;
+  height: 20px;
+  border: 0px solid rgba(215,215,215,0.50);
+  border-radius: 50px;
+}
+.title{
+  height: 44px;
+  display: flex;
+  line-height: 44px;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.title-bow{
+  margin-right: 8px;
+  width: 14px !important;
+  height: 14px !important;
+}
+.activeNameFalg1_content_info_bow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 5px;
+} 
+
+.activeNameFalg1_content_info{
+  color: #94949c;
+  /* padding-left: 17px; */
+  line-height: 25px;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+  display: flex;
+}
+.activeNameFalg1_content_div{
+  width: 5px;
+  height: 5px;
+  background: #3d3d41;
+  border-radius:50% ;
+  margin:0;
+  padding:0;
+  display:inline-block;
+}
+.activeNameFalg1_content_div2{
+  width: 5px;
+  height: 5px;
+  background: #3d3d41;
+  border-radius:50% ;
+  margin:0;
+  padding:0;
+  display:inline-block;
+  margin:  0px  15px;
+}
+ 
+.is-bordered {
+  padding:20px 0 0 0!important;
+  width: 114px!;
+}
+.selecteds{
+  background: #f5f5f5 !important;
+}
+.nut-col-8 {
+  height: 114px;
+}
+ 
+.nut-row-flex-nowrap{
+margin-bottom: 10px; 
+padding: 0 16px;
+}
+
+#top {
+  position: absolute;
+  /* width: 10px; */
+  height: 0px;
+  line-height: 0px;
+  border-bottom: 5px solid #f5f5f5;;
+  border-left: 10px solid #f5f5f5;;
+  border-right: 5px solid #f5f5f5;;
+  border-top: 10px solid #f5f5f5;;
+  left: 95px;
+  top:34px !important;
+  -webkit-transform: rotate(-60deg) skewX(-30deg) scale(1,0.866);
+  transform: rotate(313deg) skewX(356deg) scale(1,0.866);
+  border-top-right-radius: 4px;
+}
+.el-radio.is-bordered {
+  border-radius: 4px;
+  border: 0px solid #dcdfe600;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 114px;
+  max-width: 114px;
+  min-width: 114px;
+  white-space: pre-line;
+}
+.tips-txt {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  color: #3d3d41;
+  line-height: 14px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.icon-three20 ::before {
+   font-size: 48px;
+}
+.icon-three:after {
+  content: '\e059';
+}
+.icon-three0:after {  
+  content: '\e05A';
+}
+.icon-three1:after {
+  content: '\e058';
+}
+.icon-three2:after {
+  content: '\e057';
+}
+.icon-three3:after {
+  content: '\e056';
+}
+.icon-three4:after {
+  content: '\e055';
+}
+.icon-three5:after {
+  content: '\e054';
+}
+.icon-three6:after {
+  content: '\e053';
+}
+.icon-three7:after {
+  content: '\e052';
+}
+.icon-three8:after {
+  content: '\e051';
+}
+.icon-three9:after {
+  content: '\e050';
+}
+.icon-three10:after {
+  content: '\e04E';
+}
+.icon-three10-1:after {
+  content: '\e0E';
+}
+
+.icon-three11:after {
+  content: '\e00D';
+}
+.icon-three12:after {
+  content: '\e00C';
+}
+.icon-three13:after {
+  content: '\e005';
+}
+.icon-three14:after {
+  content: '\e004';
+}
+.icon-three15:after {
+  content: '\e003';
+}
+
+// color for YELLOOW 
+.icon-three16:after {
+  content: '\e04F';
+}
+.icon-three17:after {
+  content: '\e04C';
+}
+.icon-three18:after {
+  content: '\e04B';
+}
+
+.icon-three19:after {
+  content: '\e04A';
+}
+.icon-three20:after {
+  content: '\e048';
+}
+.icon-three21:after {
+  content: '\e046';
+}
+.icon-three22:after {
+  content: '\e045';
+}
+.icon-three23:after {
+  content: '\e044';
+}
+
+.icon-three24:after {
+  content: '\e043';
+}
+.icon-three25:after {
+  content: '\e042';
+}
+.icon-three26:after {
+  content: '\e041';
+}
+
+.icon-three27:after {
+  content: '\e040';
+}
+.icon-three28:after {
+  content: '\e03F';
+}
+.icon-three29:after {
+  content: '\e03E';
+}
+.icon-three30:after {
+  content: '\e03D';
+}
+.icon-three31:after {
+  content: '\e008';
+}
+// color for Green 
+.icon-three32:after {
+  content: '\e019';
+}
+.icon-three33:after {
+  content: '\e018';
+}
+.icon-three34:after {
+  content: '\e015';
+}
+
+.icon-three35:after {
+  content: '\e014';
+}
+.icon-three36:after {
+  content: '\e011';
+}
+.icon-three37:after {
+  content: '\e010';
+}
+
+.icon-three38:after {
+  content: '\e00F';
+}
+.icon-three39:after {
+  content: '\e00E';
+}
+.icon-three40:after {
+  content: '\e007';
+}
+.icon-three41:after {
+  content: '\e017';
+}
+.icon-three42:after {
+  content: '\e007';
+}
+.icon-three43:after {
+  content: '\e03F';
+}
+// color for white 
+.icon-three44:after {
+  content: '\e03C';
+}
+.icon-three45:after {
+  content: '\e03B';
+}
+.icon-three46:after {
+  content: '\e01B';
+}
+
+
+.icon-three47:after {
+  content: '\e01A';
+}
+.icon-three48:after {
+  content: '\e03B';
+}
+.icon-three49:after {
+  content: '\e01B';
+}
+.icon-three50:after {
+  content: '\e00A';
+}
+.icon-three51:after {
+  content: '\e002';
+}
+.icon-three52:after {
+  content: '\e001';
+}
+.icon-three53:after {
+  content: '\e009';
+}
+.icon-three54:after {
+  content: '\e006';
+}
+
+
+
+
+

@@ -3,7 +3,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -14,7 +13,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src')
+      '@': path.join(__dirname, 'src'),
+      extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx", ".json"]
     }
   },
   module: {
@@ -39,6 +39,34 @@ module.exports = {
         ]
       },
       {
+        test: /\.less$/i,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                strictMath: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+            appendTsSuffixTo: [/\.vue$/],
+            transpileOnly:true
+        }
+    },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource'
       }
@@ -49,11 +77,21 @@ module.exports = {
       filename: 'index.html',
       template: './index.html'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
   ],
   devServer: {
+    proxy: {
+      "/serviceEmp": {
+        target:'http://mpl.qa.sgmlink.com/middle_platform/web/ibuick', // 你请求的第三方接口
+        changeOrigin: true,
+        pathRewrite: {
+          // '^/serviceEmp': ''
+        }
+      }
+    },
     compress: true,
     port: 8088
   }
+  
 }
 

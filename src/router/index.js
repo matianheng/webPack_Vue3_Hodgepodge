@@ -12,6 +12,15 @@ const routes = [
   {
     path: '/:catchAll(.*)',
     component: require('@/views/404.vue').default
+  },
+
+  {//流程图
+    path: '/antvX6',
+    component: require('@/views/antvX6/index.vue').default
+  },
+  {//流程图
+    path: '/antvX62',
+    component: require('@/views/antvX6VUE3/index.vue').default
   }
 ]
 
