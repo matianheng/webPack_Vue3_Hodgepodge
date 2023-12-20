@@ -3,9 +3,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-console.log('环境变量：', process.env.NODE_ENV)
 module.exports = {
-  mode: 'none',
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
@@ -14,7 +13,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src'),
+      '@': path.join(__dirname, '../'),
       extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx", ".json"]
     }
   },
@@ -80,19 +79,19 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
-  // devServer: {
-  //   proxy: {
-  //     "/serviceEmp": {
-  //       target:'http://mpl.qa.sgmlink.com/middle_platform/web/ibuick', // 你请求的第三方接口
-  //       changeOrigin: true,
-  //       pathRewrite: {
-  //         // '^/serviceEmp': ''
-  //       }
-  //     }
-  //   },
-  //   compress: true,
-  //   port: 8088
-  // }
+  devServer: {
+    proxy: {
+      "/serviceEmp": {
+        target:'http://mpl.qa.sgmlink.com/middle_platform/web/ibuick', // 你请求的第三方接口
+        changeOrigin: true,
+        pathRewrite: {
+          // '^/serviceEmp': ''
+        }
+      }
+    },
+    compress: true,
+    port: 8088
+  }
   
 }
 

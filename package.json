@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "description": "集合 前端框架 知识点 组件 业务功能实现的大杂烩记录",
   "main": "index.js",
+  "comments":"--注释：命令 dev 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行\\命令 start 自定义执行命令",
+  "comments2":"--注释：命令 build 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行",
   "scripts": {
+
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
-    "build": "webpack"
+    "start": "npm run webpackDev",
+    "devqa": "webpack serve --config config/webpack.dev.conf.js",
+
+
+    "webpackDev": "export NODE_ENV=development && webpack serve --config build/webpack.dev.js --mode development",
+    "build": "webpack",
+
+    "build_prod": "export NODE_ENV=production && webpack --config ./build/webpack.prod.js --mode production",
+    "build_qa": "webpack  --config config/webpack.dev.conf.js"
   },
   "repository": {
     "type": "git",
@@ -71,7 +82,8 @@
       "generator-star-spacing": "off",
       "no-tabs": "off",
       "no-unused-vars": "off",
-      "no-irregular-whitespace": "off"
+      "no-irregular-whitespace": "off",
+      "vue/no-v-model-argument": 0
     }
   }
 }

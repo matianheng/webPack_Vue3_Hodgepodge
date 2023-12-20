@@ -15,7 +15,7 @@
         <div class="logo" />
         <a-menu v-model:selectedKeys="selectedKeys2" theme="dark" mode="inline">
           <label v-for="(item ,index) in menuLeftList" :key="index">
-            <label v-if="item.sonMenuList!=undefined &&  item.sonMenuList.length>0">
+            <label v-if="item.sonMenuList!=undefined &&  item.sonMenuList.length>0" >
               <a-sub-menu>
                 <template #title>
                   <span>
@@ -48,6 +48,7 @@
           <!-- {{selectedKeys}}
           {{selectedKeys2}}
           {{collapsed}} -->
+          <a-image :src="add"/>
           <component :is="tabs[currentTabIndex]"></component>
         </div>
         <a-layout-footer style="text-align: center">Ant Design ©2018 Created by Ant UED</a-layout-footer>
@@ -55,8 +56,6 @@
     </a-layout>
   </a-layout>
 </template>
-<script>
-</script>
 <script setup  lang="ts">
 import add from "@/assets/添加.png";
 import antvX6 from "@/views/antvX6/index.vue";
@@ -117,7 +116,9 @@ onMounted(async () => {
   }
   console.log("sdasdasdasdasdasd", menuHeardList);
 
-  query()
+  await query(1);
+  console.log(process.env.NODE_ENV);
+  debugger
 });
   const query = async (key: number) => {
     let data={names:['VehicleGroupType']};
@@ -136,9 +137,9 @@ const currentTabIndex = ref<number>(1);
 const selectedKeys = ref<number[]>([0]);
 const selectedKeys2 = ref<string[]>(["1"]);
 const tabs = ref(["", antvX6, index]);
-const menuList = reactive({ list: [] });
-const menuHeardList = ref([]);
-const menuLeftList = ref([]);
+const menuList = reactive({ list: [] as any }) as any;
+const menuHeardList = ref([]) as any;
+const menuLeftList = ref([]) as any;
 const selectFn = async (key: number) => {
   currentTabIndex.value = key;
   //  debugger;
