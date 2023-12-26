@@ -7,11 +7,11 @@
         theme="dark"
         mode="horizontal"
         :style="{ lineHeight: '64px' }">
-        <a-menu-item v-for="(item ,index) in menuHeardList" :key="index">{{item.name}}</a-menu-item>
+        <a-menu-item v-for="(item ,index) in menuHeardList" @click="menuHeader(item)" :key="index">{{item.name}}</a-menu-item>
       </a-menu>
     </a-layout-header>
-    <a-layout>
-      <a-layout-sider v-model:collapsed="collapsed" collapsible>
+    <a-layout v-if="menuHeaderFlag">
+      <a-layout-sider v-model:collapsed="collapsed" collapsible >
         <div class="logo" />
         <a-menu v-model:selectedKeys="selectedKeys2" theme="dark" mode="inline">
           <label v-for="(item ,index) in menuLeftList" :key="index">
@@ -38,7 +38,7 @@
           </label>
         </a-menu>
       </a-layout-sider>
-      <a-layout-header style="background: #fff; padding: 0" />
+      <a-layout-header style="background: #fff; padding: 0"  />
       <a-layout-content style="margin: 0 16px">
         <a-breadcrumb style="margin: 16px 0">
           <a-breadcrumb-item>User</a-breadcrumb-item>
@@ -78,7 +78,9 @@ import {
   getCurrentInstance,
   inject
 } from "vue";
+import { useRouter } from 'vue-router'
 const service = getCurrentInstance()?.appContext.config.globalProperties.$service;
+const router = useRouter()
 onMounted(async () => {
   menuList.list = [
     { name: "流程图编辑器", type: "1", itemIndex: "1" },
@@ -118,7 +120,6 @@ onMounted(async () => {
 
   await query(1);
   console.log(process.env.NODE_ENV);
-  debugger
 });
   const query = async (key: number) => {
     let data={names:['VehicleGroupType']};
@@ -131,8 +132,19 @@ onMounted(async () => {
         }
     })
   };
+  const menuHeader = (item)=>{
+    console.log("来来来",item);
+    if(item.name=='PC-Web'){
+       menuHeaderFlag.value =  true;
+    }else if(item.name=='H5'){
+      router.push({path:'/about',query:{id:1}})
+    }else{
+      menuHeaderFlag.value =  false;
+    }
+  }
 const collapsed = ref<boolean>(false);
 const collapsed2 = ref<boolean>(false);
+const menuHeaderFlag = ref<boolean>(true);
 const currentTabIndex = ref<number>(1);
 const selectedKeys = ref<number[]>([0]);
 const selectedKeys2 = ref<string[]>(["1"]);
@@ -144,7 +156,6 @@ const selectFn = async (key: number) => {
   currentTabIndex.value = key;
   //  debugger;
 };
-
 </script>
 <style scoped>
 #components-layout-demo-side .logo {

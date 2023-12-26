@@ -21,6 +21,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // 将 CSS 插入到 HTML 文件中的 <style> 标签
+          'style-loader',
+          // 解析 CSS 文件
+          'css-loader',
+          // 将 SCSS 编译为 CSS
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.vue$/,
         use: [
           {
@@ -71,6 +82,8 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource'
       }
+      
+    
     ]
   },
   plugins: [
@@ -79,6 +92,13 @@ module.exports = {
       template: './index.html'
     }),
     new VueLoaderPlugin(),
+ 
+ 
+    // new pxtorem({
+    //   rootValue: 100,
+    //   minPixelValue: 2,
+    //   propWhiteList: []
+    // })
   ],
   // devServer: {
   //   proxy: {

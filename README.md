@@ -7,3 +7,6 @@ npm run dev
 npm run build
 # 快速生成模板,输入vfor 快速生成v-for 指令模版： 输入v3onmounted 快速生成onMounted 生命周期函数：
 vbase  
+
+
+npm uninstall mand-mobile antd-mobile-vue-next

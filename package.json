@@ -3,19 +3,15 @@
   "version": "1.0.0",
   "description": "集合 前端框架 知识点 组件 业务功能实现的大杂烩记录",
   "main": "index.js",
-  "comments":"--注释：命令 dev 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行\\命令 start 自定义执行命令",
-  "comments2":"--注释：命令 build 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行",
+  "comments": "--注释：命令 dev 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行\\命令 start 自定义执行命令",
+  "comments2": "--注释：命令 build 执行根目录webpack.config.js\\ 命令 devqa执行目录config/webpack.dev.conf.js运行命令 根据不同环境进行选择执行",
   "scripts": {
-
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve",
+    "dev": "webpack serve --mode development",
     "start": "npm run webpackDev",
     "devqa": "webpack serve --config config/webpack.dev.conf.js",
-
-
     "webpackDev": "export NODE_ENV=development && webpack serve --config build/webpack.dev.js --mode development",
     "build": "webpack",
-
     "build_prod": "export NODE_ENV=production && webpack --config ./build/webpack.prod.js --mode production",
     "build_qa": "webpack  --config config/webpack.dev.conf.js"
   },
@@ -45,8 +41,10 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "node-sass": "^9.0.0",
+    "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
+    "vue-cli-plugin-mand": "^0.4.1",
     "vue-loader": "^17.3.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
@@ -58,13 +56,13 @@
     "@antv/x6-plugin-keyboard": "^2.2.1",
     "@antv/x6-plugin-selection": "^2.2.1",
     "@antv/x6-vue-shape": "^2.1.1",
+    "@nutui/nutui": "^4.2.6",
     "@vue/composition-api": "^1.7.1",
     "ant-design-vue": "^4.0.7",
     "axios": "^1.6.2",
     "core-js": "^3.8.3",
     "element-plus": "^2.4.3",
     "node-sass": "^9.0.0",
-    "sass-loader": "^13.3.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "vue": "^3.3.11",
