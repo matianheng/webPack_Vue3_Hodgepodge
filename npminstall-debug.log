@@ -1,28 +1,13 @@
 {
   root: '/Library/work/code&Other/gitHubCode/webPack_Vue3_Hodgepodge',
   registry: 'https://registry.npmmirror.com',
-  pkgs: [
-    {
-      name: 'typescripts',
-      version: 'latest',
-      type: 'tag',
-      alias: undefined,
-      arg: [Result]
-    },
-    {
-      name: 'ts-loader',
-      version: '^3.5.0',
-      type: 'range',
-      alias: undefined,
-      arg: [Result]
-    }
-  ],
+  pkgs: [],
   production: false,
   cacheStrict: false,
   cacheDir: '/Users/xg_200619/.npminstall_tarball',
   env: {
     npm_config_registry: 'https://registry.npmmirror.com',
-    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=/Users/xg_200619/.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com","typescripts","ts-loader@^3.5.0","--save-dev"],"original":["--fix-bug-versions","--china","--userconfig=/Users/xg_200619/.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com","typescripts","ts-loader@^3.5.0","--save-dev"]}',
+    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=/Users/xg_200619/.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com"],"original":["--fix-bug-versions","--china","--userconfig=/Users/xg_200619/.cnpmrc","--disturl=https://cdn.npmmirror.com/binaries/node","--registry=https://registry.npmmirror.com"]}',
     npm_config_user_agent: 'npminstall/7.9.0 npm/? node/v14.21.3 darwin x64',
     npm_config_cache: '/Users/xg_200619/.npminstall_tarball',
     NODE: '/Users/xg_200619/.nvs/node/14.21.3/x64/bin/node',

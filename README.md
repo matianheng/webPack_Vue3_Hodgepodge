@@ -10,3 +10,8 @@ vbase
 
 
 npm uninstall mand-mobile antd-mobile-vue-next
+
+npm uninstall vue-cli-plugin-mand  mand-mobile
+
+
+npm uninstall webpack-merge

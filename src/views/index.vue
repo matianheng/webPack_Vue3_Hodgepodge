@@ -68,7 +68,7 @@ import {
   FileOutlined
 } from "@ant-design/icons-vue";
 import {
-  computed, //计算属性       const plusOne = computed(() => count.value + 1)
+  computed, //计算属性   const plusOne = computed(() => count.value + 1)
   reactive, //创建响应式对象  const obj = reactive({ count: 0 })
   ref, //创建响应式属性包括对象 但是使用的时候要带 属性.value
   onMounted,
@@ -126,9 +126,8 @@ onMounted(async () => {
         service.getDefList(data).then(res => {
         if (res.resultCode == "0000") {
           console.log("冲冲冲向前冲",res.data);
-          localStorage.setItem("getDefList", JSON.stringify(res.data))
+          localStorage.setItem("getDefList", JSON.stringify(res.data));
            
-      
         }
     })
   };

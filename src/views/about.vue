@@ -1,31 +1,49 @@
 <template>
-  <nut-button>22</nut-button>
-  <nut-progress class="ss"
-    percentage="30"
->
-</nut-progress>
-<nut-checkbox v-model="checkbox1" label="复选框">复选框</nut-checkbox>
-  <nut-checkbox v-model="checkbox2" text-position="left">复选框</nut-checkbox>
-</template>    
-<script setup>
-import {ref} from 'vue' 
-const checkbox1  =  ref(false);
-const checkbox2  =  ref(false)
-import '@/teme/custom_theme.scss';
+  <div class="demo-skeleton">
+
+ 
+    <nut-skeleton width="250px" height="15px" title animated avatar row="10" :loading="!checked">
+ 
+      <div class="container">
+        <nut-avatar :size="50">
+          <img src="https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png"/>
+        </nut-avatar>
+        <div class="right-content">
+          <div class="title">NutUI</div>
+          <div class="desc">一套京东风格的轻量级移动端Vue组库，提供丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。</div>
+        </div>
+      </div>
+    </nut-skeleton>
+  </div>
+</template>
+<script setup lang="ts">
+import { ref,onMounted } from 'vue';
+const checked = ref(false);
+onMounted(()=>{
+  setTimeout(function(){
+    checked.value = true;
+  },2000)
+})
+
 </script>
-<style scoped> 
-:deep(.nut-progress-inner) {
-    width: 30%;
-    height: 100%;  
-    border-radius: var(--nut-progress-outer-border-radius, 12px);
-    background: var(--nut-progress-inner-background-color, linear-gradient(135deg, var(--nut-primary-color, #696969) 0%, #d2d2d2 100%)) !important;
-    -webkit-transition: all .4s;
-    transition: all .4s;
+
+<style>
+.demo-skeleton .container {
+  display: flex;
 }
-:deep(.nut-checkbox__icon) {
-    color: var(--nut-primary-color, #777777);
-    font-size: var(--nut-checkbox-icon-font-size, 18px);
-    transition-duration: .3s;
-    transition-property: color,border-color,background-color;
+.demo-skeleton .right-content {
+  margin-left: 19px;
+  display: flex;
+  flex-direction: column;
+}
+.demo-skeleton .title {
+  font-size: 14px;
+  color: rgb(226, 0, 0);
+}
+.demo-skeleton .desc {
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgb(0, 74, 221);
 }
 </style>
+

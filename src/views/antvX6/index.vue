@@ -1,5 +1,6 @@
 <template>
     <div class="all">
+    
         <a-tabs v-model="activeKey">
             <a-tab-pane key="1">
                 <div class="antv-content">
@@ -11,9 +12,9 @@
                         <ul class="menu-list" v-for="item in menuList" :key="item.id">
                             <li draggable="true" @drag="menuDrag(item)"> <i :class="item.classStyle"></i> <strong>{{item.name}}</strong></li>
                         </ul>
-                        <div class="wrapper-btn" v-if="isChange">
+                        <!-- <div class="wrapper-btn" v-if="isChange">
                   <a-button type="primary" @click="handlerSend">保存当前方案</a-button>
-                </div>
+                </div> -->
                     </div>
                     <div class="antv-wrapper" v-bind:style="{height:groupWidth-130 + 'px' }">
                         <div class="wrapper-canvas" :style="{height: height}" ref="wrapper" id="wrapper" @drop="drop($event)" @dragover.prevent>11</div>
@@ -100,7 +101,7 @@
                                 </a-form>
                             </div>
                             <div class="edit-btn">
-                                <!-- <a-button type="primary" @click="handlerDel" style="width:100%">删除此{{editTitle === '编辑节点' ? '节点' : '连线'}}</a-button> -->
+                                <a-button type="danger" @click="handlerDel" style="width:100%">删除此{{editTitle === '编辑节点' ? '节点' : '连线'}}</a-button>
                             </div>
                         </div>
                     </a-drawer>
